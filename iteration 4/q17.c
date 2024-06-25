@@ -17,4 +17,15 @@ void fixOrder (LinkedList *list) {
         prev = current; 
         current = current->next;
     }
+    if (current->next !=NULL) {
+        if (prev != NULL) {
+            prev->next = current->next;
+            current->next = current->next->next;
+            prev->next->next = current; 
+        } else {
+            list->head = current->next;
+            current->next = current->next->next;
+            list->head->next = current;
+        }
+    }
 }
