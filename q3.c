@@ -13,10 +13,8 @@ void printDuplicates(Node *head) {
       if (current->data == runner->data) { //check if eequal
         printf("%d\n", current->data);//print out redundant value
       }
-
       current->next = runner->next;
     }
-
     current = current->next;
   }
 }
