@@ -5,15 +5,16 @@ typedef struct node {
 } Node;
 
 void printDuplicates(Node *head) {
-  Node *current = head;
+  Node *current = head; //start at head 
 
-  while (current != NULL) {
-    while (current->next != NULL) {
-      if (current->data == current->next->data) {
+  while (current != NULL) { //check null
+    Node *runner = current->next;
+    while (runner != NULL) {
+      if (current->data == runner->data) {
         printf("%d\n", current->data);
       }
 
-      current->next = current->next->next;
+      current->next = runner->next;
     }
 
     current = current->next;
