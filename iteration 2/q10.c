@@ -7,8 +7,10 @@ void remove (LinkedList *list, int value){
         current = current->next;
     }
     if (current->data == value){
-        LinkedList *remove = current;
-        tail = current->next->next;
+        Node *remove = current;
+        if (current->next->next != NULL){
+            tail = current->next->next;
+        }
         free(remove);
     }
 }
